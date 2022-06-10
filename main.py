@@ -1,3 +1,9 @@
-def game_start():
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~ BEM VINDO AO JOGO DA FORCA ~~~~~~~~~~~~~~~~~~~~~~~~~\nO tema é: Super herois!\nObs.:\n- Apenas palavras em letras minúsculas;\n- Sem caracters especiais;\n- Sem acentos;")
+from functions.outputs import game_start
+from functions.random_words import get_random_name
+from functions.helpers import parse_input
+from functions.helpers import check_if_exists_on_word
+
 game_start()
+get_random_name()
+parse_input(input)
+check_if_exists_on_word()
