@@ -2,13 +2,17 @@ from random import choice
 
 def get_random_name():
 
-    arquivo = open('C:\\Users\\Haru\\Desktop\\projeto_01_forca\\files\\words.txt', 'r')
-    lista_de_palavras = []
+    arch = open('C:\\Users\\Haru\\Desktop\\projeto_01_forca\\files\\words.txt', 'r')
+    words_list = []
 
-    for linha in arquivo:
-        linha = linha.rstrip()
-        lista_de_palavras.append(linha)
+    for line in arch:
+        line = line.rstrip()
+        words_list.append(line)
 
-    arquivo.close()
+    arch.close()
 
-    return choice(lista_de_palavras)
+    aux_empty = len(words_list)
+    if aux_empty == 0:
+        raise ValueError ("pasta de palavras esta vazia")
+
+    return choice(words_list)

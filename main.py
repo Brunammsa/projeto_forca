@@ -4,6 +4,5 @@ from functions.helpers import parse_input
 from functions.helpers import check_if_exists_on_word
 
 game_start()
-get_random_name()
-parse_input(input)
-check_if_exists_on_word()
+secret_word = get_random_name()
+parse_input()
