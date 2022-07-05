@@ -1,5 +1,5 @@
 def game_start():
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~ BEM VINDO AO JOGO DA FORCA ~~~~~~~~~~~~~~~~~~~~~~~~~\nO tema é: Super herois!\nObs.:\n- Apenas palavras em letras minúsculas;\n- Sem caracteres especiais;\n- Sem acentos;\n- Você irá iniciar o jogo com 6 vidas;")
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~ BEM VINDO AO JOGO DA FORCA ~~~~~~~~~~~~~~~~~~~~~~~~~\nO tema é: Frutas!\nObs.:\n- Apenas palavras em letras minúsculas;\n- Sem caracteres especiais;\n- Sem acentos;\n- Você irá iniciar o jogo com 6 vidas;")
 
 def you_lost():
     print("Que pena, não foi dessa vez!")

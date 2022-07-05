@@ -2,7 +2,7 @@ from random import choice
 
 def get_random_name():
 
-    arch = open('C:\\Users\\Haru\\Desktop\\projeto_01_forca\\files\\words.txt', 'r')
+    arch = open('../files/words.txt', 'r')
     words_list = []
 
     for line in arch:

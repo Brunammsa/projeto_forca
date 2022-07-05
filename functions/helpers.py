@@ -1,12 +1,26 @@
+from random_words import get_random_name
+from unidecode import unidecode
 
 def change_word_to_underline(word) -> str:
-    return 'a'
+
+    word = get_random_name()
+    underline = " _"
+    word_underline = "A palavra sorteada tem esta quantidade de letras: " + (len(word) * underline)
+
+    return word_underline
 
 def remove_special_characters(word) -> str:
-    return 'a'
+
+    word = get_random_name()
+    without_special_char = unidecode(word)
+
+    return without_special_char
 
 def check_if_exists_on_word(word, letter):
 #   return letter in word
+    word = get_random_name()
+    letter = parse_input()
+
     if letter.lower() in word.lower():
         return True
     else:
@@ -14,7 +28,13 @@ def check_if_exists_on_word(word, letter):
 
 def show_correct_letters(word, tries) -> str:
 
-    return 'a'
+    word = change_word_to_underline(word)
+    tries = letters_tries
+
+    if tries in word:
+        
+
+
 
 
 def parse_input() -> str:
@@ -25,4 +45,7 @@ def parse_input() -> str:
         answer = input("Resposta inválida. Por favor, digite a letra desejada: ")
 
     letter_lower = answer.lower()
+    letters_tries = []
+    letters_tries.append(letter_lower[0])
+
     return letter_lower[0]
