@@ -1,5 +1,7 @@
 from random_words import get_random_name
 from unidecode import unidecode
+from outputs import doesnt_exists
+from outputs import users_life
 
 def change_word_to_underline(word) -> str:
 
@@ -22,9 +24,9 @@ def check_if_exists_on_word(word, letter):
     letter = parse_input()
 
     if letter.lower() in word.lower():
-        return True
+        return show_correct_letters(word, tries)
     else:
-        return False
+        return users_life(life)
 
 def show_correct_letters(word, tries) -> str:
 
@@ -32,7 +34,7 @@ def show_correct_letters(word, tries) -> str:
     tries = letters_tries
 
     if tries in word:
-        
+        None # emperrada
 
 
 
