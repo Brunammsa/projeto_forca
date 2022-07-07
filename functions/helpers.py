@@ -7,9 +7,12 @@ def change_word_to_underline(word) -> str:
 
     word = get_random_name()
     underline = " _"
-    word_underline = len(word) * underline
+    secret_word_underline = ''
 
-    return word_underline
+    for letter in word:
+        secret_word_underline += underline
+
+    return secret_word_underline
 
 def remove_special_characters(word) -> str:
 
@@ -29,16 +32,14 @@ def check_if_exists_on_word(word, letter):
         return users_life(life)
 
 def show_correct_letters(word, tries) -> str:
-
+    
     word = change_word_to_underline(word)
     tries = letters_tries
 
     for index, letter in enumerate(word):
-        if tries[index][letter] == word[index][letter]:
+        if tries[index] == word[index]:
 
-            return word_underline[index][letter] == tries[index][letter]
-
-
+            return secret_word_underline[index] == tries[index]
 
 
 def parse_input() -> str:
