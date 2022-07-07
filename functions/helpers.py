@@ -7,7 +7,7 @@ def change_word_to_underline(word) -> str:
 
     word = get_random_name()
     underline = " _"
-    word_underline = "A palavra sorteada tem esta quantidade de letras: " + (len(word) * underline)
+    word_underline = len(word) * underline
 
     return word_underline
 
@@ -33,8 +33,10 @@ def show_correct_letters(word, tries) -> str:
     word = change_word_to_underline(word)
     tries = letters_tries
 
-    if tries in word:
-        None # emperrada
+    for index, letter in enumerate(word):
+        if tries[index][letter] == word[index][letter]:
+
+            return word_underline[index][letter] == tries[index][letter]
 
 
 
