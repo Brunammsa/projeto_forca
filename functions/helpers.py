@@ -1,11 +1,7 @@
-from random_words import get_random_name
-from unidecode import unidecode
-from outputs import doesnt_exists
-from outputs import users_life
+import unidecode
 
 def change_word_to_underline(word) -> str:
 
-    word = get_random_name()
     underline = " _"
     secret_word_underline = ''
 
@@ -14,37 +10,34 @@ def change_word_to_underline(word) -> str:
 
     return secret_word_underline
 
+
 def remove_special_characters(word) -> str:
 
-    word = get_random_name()
-    without_special_char = unidecode(word)
+    word_without_special_char = unidecode(word)
 
     return without_special_char
 
+
 def check_if_exists_on_word(word, letter):
 #   return letter in word
-    word = get_random_name()
-    letter = parse_input()
 
-    if letter.lower() in word.lower():
-        return show_correct_letters(word, tries)
+    if letter in word:
+        return True
     else:
-        return users_life(life)
+        return False
+
 
 def show_correct_letters(word, tries) -> str:
-    
-    word = change_word_to_underline(word)
-    tries = letters_tries
 
     for index, letter in enumerate(word):
-        if tries[index] == word[index]:
+        if tries[index] == letter:
 
-            return secret_word_underline[index] == tries[index]
+            return 
 
 
 def parse_input() -> str:
     
-    answer = input("Por favor, digite a letra desejada: ")    
+    answer = input("Por favor, digite a letra desejada: ")
     
     while len(answer) == 0 or not answer.isalpha():
         answer = input("Resposta inválida. Por favor, digite a letra desejada: ")
@@ -54,3 +47,5 @@ def parse_input() -> str:
     letters_tries.append(letter_lower[0])
 
     return letter_lower[0]
+
+
