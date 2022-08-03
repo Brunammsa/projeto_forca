@@ -26,7 +26,6 @@ def check_if_exists_on_word(word, letter):
     else:
         return False
 
-
 def show_correct_letters(word, tries) -> str:
 
     for index, letter in enumerate(word):
@@ -47,5 +46,3 @@ def parse_input() -> str:
     letters_tries.append(letter_lower[0])
 
     return letter_lower[0]
-
-
