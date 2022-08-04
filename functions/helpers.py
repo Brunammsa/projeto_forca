@@ -13,9 +13,9 @@ def change_word_to_underline(word) -> str:
 
 def remove_special_characters(word) -> str:
 
-    word_without_special_char = unidecode(word)
+    word_without_special_char = unidecode.unidecode(word)
 
-    return without_special_char
+    return word_without_special_char
 
 
 def check_if_exists_on_word(word, letter):
@@ -39,7 +39,8 @@ def parse_input() -> str:
     answer = input("Por favor, digite a letra desejada: ")
     
     while len(answer) == 0 or not answer.isalpha():
-        answer = input("Resposta inválida. Por favor, digite a letra desejada: ")
+        print('Resposta inválida')
+        answer = input("Por favor, digite a letra desejada: ")
 
     letter_lower = answer.lower()
     letters_tries = []
