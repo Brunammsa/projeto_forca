@@ -22,19 +22,11 @@ def doesnt_exists(letter):
 
 def users_life(life):
 
-    sum_tries = 0
-    lifes = 6
-
-    while sum_tries < lifes:
-        if doesnt_exists(letter):
-            sum_tries += 1
-            return "Você ainda tem {} vidas!".format(lifes-sum_tries)
-        if sum_tries == lifes:
-            return you_lost()
-            
+    if life == 0:
+        you_lost()
+    else:
+        print(f'Você ainda tem {life} vidas')
 
 def letters_tried(letters):
 
-    letters = letters_tried(letters)
-
-    print("Tentativas: {}".format(letters))
+    print(f"Tentativas: {letters}")

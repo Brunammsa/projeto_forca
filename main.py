@@ -1,14 +1,12 @@
-from functions.outputs import game_start
+from functions.outputs import *
 from functions import random_words
-from functions.helpers import remove_special_characters
-from functions.helpers import change_word_to_underline
-from functions.helpers import parse_input
-from functions.helpers import check_if_exists_on_word
+from functions.helpers import *
+
 
 game_start()
 secret_word = random_words.get_random_name()
 word_cleaned = remove_special_characters(secret_word)
-words_in_underline = change_word_to_underline(word_cleaned)
+print(f'\nA palavra sorteada é a: {change_word_to_underline(word_cleaned)}\n')
 
 life = 6
 hanged = False
@@ -19,30 +17,34 @@ incorrect_tries = []
 while not hanged and not winner:
 
     letter_try = parse_input()
+    letter_try = remove_special_characters(letter_try)
     letters_word = check_if_exists_on_word(word_cleaned, letter_try)
 
     if letter_try in tries:
 
-        print("You already tried this letter, please try another one: ")
-        letter_try
+        print("Você já tentou esta letra, por favor tente uma outra.")
 
     elif letters_word:
         tries.append(letter_try)
-        helpers.show_correct_letters(word_cleaned, letter_try)
+        correct_letters = show_correct_letters(secret_word, tries)
+        print(correct_letters)
+
+        if '_' not in correct_letters:
+            winner = True
 
     else:
-        outputs.doesnt_exists(letter_try)
+        doesnt_exists(letter_try)
         life -= 1
         incorrect_tries.append(letter_try)
         tries.append(letter_try)
-        outputs.users_life(life)
-        outputs.letters_tried(incorrect_tries)
+        users_life(life)
+        letters_tried(incorrect_tries)
         if life == 0:
             hanged = True
 
 if winner == True:
-    outputs.you_won
+    you_won()
 
 if hanged == True:
-    outputs.you_lost
-    outputs.reveal_secret_word
+    you_lost()
+    reveal_secret_word()

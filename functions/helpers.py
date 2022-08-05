@@ -15,23 +15,26 @@ def remove_special_characters(word) -> str:
 
     word_without_special_char = unidecode.unidecode(word)
 
-    return word_without_special_char
+    return word_without_special_char.lower()
 
 
 def check_if_exists_on_word(word, letter):
 #   return letter in word
 
-    if letter in word:
+    if remove_special_characters(letter) in remove_special_characters(word):
         return True
     else:
         return False
 
 def show_correct_letters(word, tries) -> str:
-
+    new_word = ''
     for index, letter in enumerate(word):
-        if tries[index] == letter:
+        if remove_special_characters(letter) in tries:
+            new_word += letter + ' '
+        else:
+            new_word += '_ '
 
-            return 
+    return new_word
 
 
 def parse_input() -> str:

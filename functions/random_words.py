@@ -6,7 +6,7 @@ def get_random_name():
     words_list = []
 
     for line in arch:
-        line = line.rstrip()
+        line = line.rstrip().lower()
         words_list.append(line)
 
     arch.close()
