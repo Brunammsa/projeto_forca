@@ -22,7 +22,7 @@ while not hanged and not winner:
 
     if letter_try in tries:
 
-        print("Você já tentou esta letra, por favor tente uma outra.")
+        print('Você já tentou esta letra, por favor tente uma outra.')
 
     elif letters_word:
         tries.append(letter_try)

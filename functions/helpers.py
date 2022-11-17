@@ -1,8 +1,9 @@
 import unidecode
 
+
 def change_word_to_underline(word) -> str:
 
-    underline = " _"
+    underline = ' _'
     secret_word_underline = ''
 
     for letter in word:
@@ -19,12 +20,13 @@ def remove_special_characters(word) -> str:
 
 
 def check_if_exists_on_word(word, letter):
-#   return letter in word
+    #   return letter in word
 
     if remove_special_characters(letter) in remove_special_characters(word):
         return True
     else:
         return False
+
 
 def show_correct_letters(word, tries) -> str:
     new_word = ''
@@ -38,12 +40,12 @@ def show_correct_letters(word, tries) -> str:
 
 
 def parse_input() -> str:
-    
-    answer = input("Por favor, digite a letra desejada: ")
-    
+
+    answer = input('Por favor, digite a letra desejada: ')
+
     while len(answer) == 0 or not answer.isalpha():
         print('Resposta inválida')
-        answer = input("Por favor, digite a letra desejada: ")
+        answer = input('Por favor, digite a letra desejada: ')
 
     letter_lower = answer.lower()
     letters_tries = []
